@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Headline from './components/Headline';
+import DashboardOverview from './components/DashboardOverview';
+import TodayOverview from './components/TodayOverview'
+import {ContextProvider} from './components/Context';
+import {TodayContextProvider} from './components/TodayContext';
+import {ToggleContext} from './components/Toggle';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ContextProvider>
+      <TodayContextProvider>
+        <ToggleContext>
+          <div className="App">
+          <Headline />
+          <DashboardOverview />
+          <TodayOverview />
+          </div>
+          </ToggleContext>
+        </TodayContextProvider>
+      </ContextProvider>
   );
 }
 

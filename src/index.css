@@ -1,13 +1,316 @@
+* {
+  box-sizing: border-box;
+}
+html,
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  overflow-x: hidden;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8em;
+  background-color: hsl(0, 0%, 100%);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.header , .header-dark{
+  padding: 1em 7em;
+  padding-bottom: 7em;
+  background-color: hsl(225, 100%, 98%);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: capitalize;
+  /* The switch - the box around the slider */
+  /* Hide default HTML checkbox */
+  /* The slider */
+  /* Rounded sliders */
 }
+
+.header-dark {
+  background-color: hsl(232, 19%, 15%);
+}
+.header .heading-1, .header-dark .heading-1 {
+  color: hsl(230, 17%, 14%);
+  font-size: 1.4em;
+}
+.header .heading-1-dark, .header-dark .heading-1-dark {
+  color: hsl(0, 0%, 100%);
+}
+.header .heading-2 , .header-dark .heading-2{
+  color: hsl(228, 12%, 44%);
+  margin-top: -1em;
+  font-weight: bold;
+}
+.header .heading-2-dark , .header-dark .heading-2-dark{
+  color: hsl(228, 34%, 66%);
+}
+.header .line , .header-dark .line{
+  display: none;
+}
+.header .toggle, .header-dark .toggle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+}
+.header .toggle .toggle-heading-2,  .header-dark .toggle .toggle-heading-2{
+  color: hsl(228, 12%, 44%);
+  font-weight: bold;
+}
+.header .toggle .heading-2-dark, .header-dark .toggle .heading-2-dark  {
+  color: hsl(0, 0%, 100%);
+}
+.header .switch, .header-dark .switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+.header .switch input, .header-dark .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.header .slider, .header-dark .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.header .slider:before, .header-dark .slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.header input:checked + .slider, .header-dark input:checked + .slider {
+  background-image: linear-gradient(hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+}
+.header input:checked + .slider:before, .header-dark input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+.header .slider.round, .header-dark .slider.round {
+  border-radius: 34px;
+}
+.header .round:before, .header-dark .round:before {
+  border-radius: 50%;
+}
+.dashboard {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1.6em;
+  margin-top: -5em;
+}
+.dashboard #facebook {
+  border-top: 3px solid hsl(208, 92%, 53%);
+}
+.dashboard #twitter {
+  border-top: 3px solid hsl(203, 89%, 53%);
+}
+.dashboard #instagram {
+  border-width: 3px;
+  border-style: solid;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 0;
+  border-image: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%)) 10 30%;
+}
+.dashboard #youtube {
+  border-top: 3px solid hsl(348, 97%, 39%);
+}
+.dashboard .card, .dashboard .card-dark {
+  display: flex;
+  flex-direction: column;
+  background-color: hsl(227, 47%, 96%);
+  padding: 0.5em 3em;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.3em;
+}
+
+.dashboard .card-dark{
+  background-color: hsl(228, 28%, 20%);
+
+}
+.dashboard .card .social-media, .dashboard .card-dark .social-media  {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3em;
+}
+.dashboard .card .social-media .account-name, .dashboard .card-dark .social-media .account-name-dark  {
+  font-weight: bold;
+  color: hsl(228, 12%, 44%);
+}
+
+.dashboard .card-dark .social-media .account-name-dark  {
+  color: hsl(228, 34%, 66%);
+}
+.dashboard .card .no-of-followeres, .dashboard .card-dark .no-of-followeres-dark {
+  font-size: 3em;
+  font-weight: bold;
+  margin-top: -0.1em;
+}
+.dashboard .card .heading-1-dark, .dashboard .card-dark .no-of-followeres-dark {
+  color: hsl(0, 0%, 100%);
+}
+.dashboard .card .followers, .dashboard .card-dark .followers {
+  text-transform: uppercase;
+  color: hsl(228, 12%, 44%);
+  margin-top: -1.5em;
+  letter-spacing: 0.1em;
+}
+.dashboard .card-dark .followers {
+  color: hsl(228, 34%, 66%);
+}
+.dashboard .card .amount, .dashboard .card-dark .amount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  gap: 0.2em;
+}
+.dashboard .card .amount .increase-followers, .dashboard .card-dark .amount .increase-followers {
+  color: hsl(163, 72%, 41%);
+}
+.dashboard .card .amount .decrease-followers, .dashboard .card-dark .amount .decrease-followers {
+  color: hsl(356, 69%, 56%);
+}
+
+.overiew-today {
+  margin-top: 4em;
+  margin-inline: 7em;
+}
+.overiew-today .overview-heading {
+  font-weight: bold;
+  color: hsl(228, 12%, 44%);
+}
+.overiew-today .heading-1-dark {
+  color: hsl(0, 0%, 100%);
+}
+.overiew-today .margin-top {
+  margin-top: 1.4em;
+}
+.overiew-today .overview-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1.6em;
+}
+.overiew-today .overview-details .details, .overiew-today .overview-details .card-dark {
+  background-color: hsl(227, 47%, 96%);
+  padding: 0.5em 1em;
+  min-width: 16vw;
+  border-radius: 0.3em;
+  width: fit-content;
+}
+.overiew-today .overview-details .card-dark {
+  background-color:hsl(228, 28%, 20%);
+}
+.overiew-today .overview-details .details .details-heading, .overiew-today .overview-details .card-dark .details-heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.overiew-today .overview-details .details .details-heading .detail-heading-text, .overiew-today .overview-details .card-dark .details-heading .detail-heading-text  {
+  font-weight: bold;
+  color: hsl(228, 12%, 44%);
+}
+.overiew-today .overview-details .card-dark .details-heading .detail-heading-text  {
+  color: hsl(228, 34%, 66%);
+}
+.overiew-today .overview-details .details .details-body, .overiew-today .overview-details .card-dark .details-body{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.overiew-today .overview-details .details .details-body .details-number, .overiew-today .overview-details .card-dark .details-body .details-number  {
+  font-weight: bold;
+  color: hsl(230, 17%, 14%);
+  font-size: 1.4em;
+}
+.overiew-today .overview-details .card-dark .details-body .details-number  {
+  color: hsl(0, 0%, 100%);
+}
+.overiew-today .overview-details .details .details-body .amount, .overiew-today .overview-details .card-dark .details-body .amount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  gap: 0.2em;
+}
+.overiew-today .overview-details .details .details-body .amount .increase-followers, .overiew-today .overview-details .card-dark .details-body .amount .increase-followers {
+  color: hsl(163, 72%, 41%);
+}
+.overiew-today .overview-details .details .details-body .amount .decrease-followers, .overiew-today .overview-details .card-dark .details-body .amount .decrease-followers {
+  color: hsl(356, 69%, 56%);
+}
+
+@media (max-width: 700px) {
+  .header, .header-dark {
+    display: flex;
+    flex-direction: column;
+    padding-inline: 0.5em 1em;
+  }
+  .header .heading-1, .header-dark .heading-1
+  .header .heading-2, .header-dark .heading-2 {
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+  }
+  .header .line,  .header-dark .line {
+    display: block;
+    width: 90vw;
+    height: 0.2px;
+    color: hsl(228, 12%, 44%);
+    margin-bottom: 1em;
+  }
+  .header .toggle, .header-dark .toggle {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .dashboard {
+    display: flex;
+    flex-direction: column;
+  }
+  .dashboard .card {
+    width: 80vw;
+  }
+  .overiew-today .overview-heading {
+    width: 100vw;
+  }
+  .overiew-today .overview-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .overiew-today .overview-details .details, .overiew-today .overview-details .card-dark {
+    width: 80vw;
+  }
+}
+
