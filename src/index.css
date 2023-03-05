@@ -6,9 +6,6 @@ body {
   margin: 0;
   height: 100%;
   overflow-x: hidden;
-}
-body {
-  margin: 0;
   padding: 0;
   font-family: 'Inter', sans-serif;
   font-size: 0.8em;
@@ -24,10 +21,6 @@ body {
   justify-content: space-between;
   align-items: center;
   text-transform: capitalize;
-  /* The switch - the box around the slider */
-  /* Hide default HTML checkbox */
-  /* The slider */
-  /* Rounded sliders */
 }
 
 .header-dark {
@@ -47,6 +40,7 @@ body {
 }
 .header .heading-2-dark , .header-dark .heading-2-dark{
   color: hsl(228, 34%, 66%);
+  font-weight: bold;
 }
 .header .line , .header-dark .line{
   display: none;
@@ -141,10 +135,11 @@ body {
   display: flex;
   flex-direction: column;
   background-color: hsl(227, 47%, 96%);
-  padding: 0.5em 3em;
+  padding: 0.5em 5em;
   justify-content: center;
   align-items: center;
   border-radius: 0.3em;
+  min-width: 17vw;
 }
 
 .dashboard .card-dark{
@@ -221,7 +216,7 @@ body {
 .overiew-today .overview-details .details, .overiew-today .overview-details .card-dark {
   background-color: hsl(227, 47%, 96%);
   padding: 0.5em 1em;
-  min-width: 16vw;
+  min-width: 17vw;
   border-radius: 0.3em;
   width: fit-content;
 }
